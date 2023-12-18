@@ -1,0 +1,239 @@
+{
+	"info": {
+		"_postman_id": "81ec46ae-0479-49b4-a376-71792619e227",
+		"name": "Taller3LuisArdiles",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30264078"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"david.araya@alumnos.ucn.cl\",\r\n    \"password\":\"20767691\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fullname\":\"Luis Felipe Ardiles Castillo\",\r\n    \"email\":\"luis.ardiles@alumnos.ucn.cl\",\r\n    \"birthday\": 2002,\r\n    \"rut\": \"20.972.802-8\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Password",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJkYXZpZC5hcmF5YUBhbHVtbm9zLnVjbi5jbCIsIm5iZiI6MTcwMjg1NDI2OSwiZXhwIjoxNzAzNDU5MDY5LCJpYXQiOjE3MDI4NTQyNjl9.-8_gCxBM43ckvDG85AzN6R9_op5su-67iGI0yjNvqJM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"currentPassword\":\"20767691\",\r\n    \"newPassword\":\"20767692\",\r\n    \"confirmNewPassword\":\"20767692\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/auth/update-password/david.araya@alumnos.ucn.cl",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"update-password",
+						"david.araya@alumnos.ucn.cl"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Repositories",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJkYXZpZC5hcmF5YUBhbHVtbm9zLnVjbi5jbCIsIm5iZiI6MTcwMjg1NDI2OSwiZXhwIjoxNzAzNDU5MDY5LCJpYXQiOjE3MDI4NTQyNjl9.-8_gCxBM43ckvDG85AzN6R9_op5su-67iGI0yjNvqJM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/repositories",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"repositories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Commit",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJkYXZpZC5hcmF5YUBhbHVtbm9zLnVjbi5jbCIsIm5iZiI6MTcwMjg1NDI2OSwiZXhwIjoxNzAzNDU5MDY5LCJpYXQiOjE3MDI4NTQyNjl9.-8_gCxBM43ckvDG85AzN6R9_op5su-67iGI0yjNvqJM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/repositories/commits/NESSFIT",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"repositories",
+						"commits",
+						"NESSFIT"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJkYXZpZC5hcmF5YUBhbHVtbm9zLnVjbi5jbCIsIm5iZiI6MTcwMjg1NDI2OSwiZXhwIjoxNzAzNDU5MDY5LCJpYXQiOjE3MDI4NTQyNjl9.-8_gCxBM43ckvDG85AzN6R9_op5su-67iGI0yjNvqJM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/users/david.araya@alumnos.ucn.cl",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"david.araya@alumnos.ucn.cl"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJkYXZpZC5hcmF5YUBhbHVtbm9zLnVjbi5jbCIsIm5iZiI6MTcwMjg1NDI2OSwiZXhwIjoxNzAzNDU5MDY5LCJpYXQiOjE3MDI4NTQyNjl9.-8_gCxBM43ckvDG85AzN6R9_op5su-67iGI0yjNvqJM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"fullname\": \"David Arayaa\",\r\n  \"email\": \"david.arayaa@alumnos.ucn.cl\",\r\n  \"birthday\": 2000\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/users/20.767.691-8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"20.767.691-8"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
